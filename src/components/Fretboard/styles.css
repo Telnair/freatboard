@@ -1,0 +1,85 @@
+.fretboard {
+  display: block;
+  background: #ffffb3;
+  border: #331a00;
+  width: 1400px;
+  position: relative;
+  margin: 50px auto;
+  border-radius: 12px;
+  padding-bottom: 10px;
+}
+
+.fret-numbers {
+  background: #996600;
+  color: #fff2cc;
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding: 10px 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.fret-number {
+  border: 1px solid #fff7e6;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.string {
+  position: relative;
+  padding: 0 20px;
+}
+
+.string-number {
+  background: #ffffb3;
+  position: absolute;
+  left: -50px;
+  top: 5px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.frets {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.frets:after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  right: -10px;
+  background: #aaa;
+}
+
+.fret {
+  color: #fff2cc;
+  background: #ac7339;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  opacity: 0.2;
+}
+
+.fret.selected {
+  opacity: 1;
+}
