@@ -2,11 +2,23 @@
   display: block;
   background: #ffffb3;
   border: #331a00;
-  width: 1400px;
+  width: 80vw;
   position: relative;
   margin: 50px auto;
   border-radius: 12px;
   padding-bottom: 10px;
+}
+
+.fretboard:not(.left-handed) .string-number {
+  left: -50px;
+}
+
+.fretboard.left-handed {
+  direction: rtl;
+}
+
+.fretboard.left-handed .string-number {
+  right: -50px;
 }
 
 .fret-numbers {
@@ -24,7 +36,6 @@
 }
 
 .fret-number {
-  border: 1px solid #fff7e6;
   width: 30px;
   height: 30px;
   display: flex;
@@ -40,7 +51,6 @@
 .string-number {
   background: #ffffb3;
   position: absolute;
-  left: -50px;
   top: 5px;
   font-size: 18px;
   padding: 10px;
@@ -82,4 +92,65 @@
 
 .fret.selected {
   opacity: 1;
+}
+
+.fret.root {
+  background: #4d3400;
+}
+
+.settings {
+  width: 60vw;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background: #ac7339;
+  color: #fff2cc;
+}
+
+.settings select {
+  margin-left: 10px;
+  margin-top: 4px;
+  background: white;
+  direction: ltr;
+}
+
+.settings > div:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.settings__checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.settings__checkbox input {
+  margin: 0;
+  font-size: 16px;
+  margin-left: 5px;
+  background: #ffffb3;
+}
+
+.settings-field {
+  font-weight: 500;
+}
+
+.settings__scale-root {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.settings__scale-type {
+  display: flex;
+  align-items: center;
+}
+
+.settings__frets {
+  display: flex;
+  align-items: center;
+}
+
+.settings__tuning {
+  display: flex;
+  align-items: center;
 }
