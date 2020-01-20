@@ -13,7 +13,7 @@ export enum Note {
   Ab = 'G#/Ab',
 }
 
-export type Scale = 'chromatic' | 'natMinor' | 'major';
+export type Scale = 'chromatic' | 'natMinor' | 'major' | 'penta';
 
 export type IFretboard = Array<Note[]>;
 
