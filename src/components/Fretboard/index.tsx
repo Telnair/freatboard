@@ -38,10 +38,10 @@ export const Fretboard: React.FC<{}> = () => {
     return strings.map(rootNote => createNoteRange(rootNote, Array(frets).fill(0.5)));
   };
 
-  const [ scaleRoot, setScaleRoot ] = useState<Note>(Note.C);
+  const [ scaleRoot, setScaleRoot ] = useState<Note>(Note.A);
   const [ frets, setFrets ] = useState<number>(12);
   const [ selectedNote, setSelectedNote ] = useState<SelectedNote>(null);
-  const [ selectedScale, setSelectedScale ] = useState<Scale>('major');
+  const [ selectedScale, setSelectedScale ] = useState<Scale>('pentatonicMinor');
   const [ roots, setRoots ] = useState<Note[]>(defaultGuitarRoots);
   const [ isLeftHanded, setIsLeftHanded ] = useState<boolean>(false);
 

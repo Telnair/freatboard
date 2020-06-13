@@ -1,16 +1,16 @@
 export enum Note {
   A = 'A',
-  Bb = 'A#/Bb',
+  Bb = 'A#',
   B = 'B',
   C = 'C',
-  Db = 'C#/Db',
+  Db = 'C#',
   D = 'D',
-  Eb = 'D#/Eb',
+  Eb = 'D#',
   E = 'E',
   F = 'F',
-  Gb = 'F#/Gb',
+  Gb = 'F#',
   G = 'G',
-  Ab = 'G#/Ab',
+  Ab = 'G#',
 }
 
 export type Scale = 'chromatic' | 'natMinor' | 'major' | 'pentatonicMinor' | 'pentatonicMajor' | 'bluesMinor' | 'bluesMajor';

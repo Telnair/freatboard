@@ -30,32 +30,32 @@ export const Settings: React.FC<SettingsProps> = ({
   return (
     <div className="settings">
       <div className="settings__checkbox">
-        <div className="settings-field">Left-handed mode: {isLeftHanded ? 'ON' : 'OFF'}</div>
-        <input type="checkbox" checked={isLeftHanded} onClick={onSetIsLeftHanded} />
+        <div className="settings-field">Left-handed mode: <span>{isLeftHanded ? 'ON' : 'OFF'}</span></div>
+        <input type="checkbox" checked={isLeftHanded} onChange={onSetIsLeftHanded} />
       </div>
       <div className="settings__scale">
         <div className="settings__scale-root">
           <div className="settings-field">Root note:</div>
-          <select onChange={(e: React.SyntheticEvent<HTMLSelectElement>) => onSetScaleRoot(e.currentTarget.value as Note)}>
+          <select value={scaleRoot} onChange={(e: React.SyntheticEvent<HTMLSelectElement>) => onSetScaleRoot(e.currentTarget.value as Note)}>
             {notes.map(note => (
-              <option value={note} selected={scaleRoot === note}>{note}</option>
+              <option key={note} value={note}>{note}</option>
             ))}
           </select>
         </div>
         <div className="settings__scale-type">
           <div className="settings-field">Scale:</div>
-          <select onChange={(e: React.SyntheticEvent<HTMLSelectElement>) => onSetSelectedScale(e.currentTarget.value as Scale)}>
+          <select value={selectedScale} onChange={(e: React.SyntheticEvent<HTMLSelectElement>) => onSetSelectedScale(e.currentTarget.value as Scale)}>
             {Object.keys(scales).map(scale => (
-              <option value={scale} selected={selectedScale === scale}>{scale}</option>
+              <option key={scale} value={scale}>{scale}</option>
             ))}
           </select>
         </div>
       </div>
       <div className="settings__frets">
         <div className="settings-field">Frets:</div>
-        <select onChange={(e: React.SyntheticEvent<HTMLSelectElement>) => onSetFrets(+e.currentTarget.value)}>
-          {Array(24).fill(null).map((n, id) => (
-            <option value={id + 1} selected={frets === id + 1}>{id + 1}</option>
+        <select value={frets} onChange={(e: React.SyntheticEvent<HTMLSelectElement>) => onSetFrets(+e.currentTarget.value)}>
+          {Array(24).fill(null).map((_, id) => (
+            <option key={id} value={id + 1}>{id + 1}</option>
           ))}
         </select>
       </div>
@@ -63,9 +63,9 @@ export const Settings: React.FC<SettingsProps> = ({
         <div className="settings-field">Tuning:</div>
         <div style={{ direction: 'rtl' }}>
           {roots.map((rootNote, id) => (
-            <select onChange={(e: React.SyntheticEvent<HTMLSelectElement>) => onSetRoots(roots.map((r, idx) => idx === id ? e.currentTarget.value as Note : r))}>
-              {notes.map(root => (
-                <option value={root} selected={rootNote === root}>{root}</option>
+            <select value={rootNote} key={rootNote + id} onChange={(e: React.SyntheticEvent<HTMLSelectElement>) => onSetRoots(roots.map((r, idx) => idx === id ? e.currentTarget.value as Note : r))}>
+              {notes.map((root, id) => (
+                <option key={root + id} value={root}>{root}</option>
               ))}
             </select>
           ))}
