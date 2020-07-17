@@ -11,7 +11,7 @@
 
 @media screen and (max-width: 900px) {
   .fretboard {
-    width: 93vw;
+    width: 91vw;
     border-radius: 6px;
     margin: 15px auto 30px;
   }
