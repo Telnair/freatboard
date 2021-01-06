@@ -8,7 +8,7 @@ import { Settings } from './Settings';
 
 
 
-export const Fretboard: React.FC<{}> = () => {
+export const Fretboard: React.FC = () => {
   const getNoteByInterval = (note: Note, interval: number): Note => {
     const dir = interval < 0 ? 'desc' : 'asc';
     const noteReducer = (fn: (note: Note) => Note) => Array(Math.abs(interval * 2)).fill(null).reduce(fn, note);
